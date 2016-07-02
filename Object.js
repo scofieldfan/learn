@@ -61,9 +61,39 @@ console.log(book)
 book.year = 2006;
 console.log(book.year)
 console.log(book)
+book.year = 2008;
+console.log(book.year);
 
+var car = {};
+Object.defineProperties(car, {
+	_year:{
+		value:2004
+	},
+	edition:{
+		value:1
+	},
+	year:{
+		get:function(){
+			return this._year;	
+		},
+		set:function(newValue){
+			if(newValue>2005){
+				this._year = newValue;
+				this.edition  += newValue - 2004;
+			}
+		}
+	}
+});
+console.log(car);
+console.log(car._year);
+console.log(car.edition);
+console.log(car.year);
 
-
+var descriptor = Object.getOwnPropertyDescriptor(car, "_year");
+console.log("car.year:"+descriptor.value);
+console.log("car.configurable:"+descriptor.configurable);
+console.log("car.writable:"+descriptor.writable);
+ 
 
 
 
