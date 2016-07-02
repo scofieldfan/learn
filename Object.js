@@ -95,12 +95,75 @@ console.log("car.configurable:"+descriptor.configurable);
 console.log("car.writable:"+descriptor.writable);
  
 
+function createPerson(name,age,job){
+	var o = new Object();
+	o.name = name;
+	o.job = job;
+	o.sayName = function(){
+		console.log(o.name);
+	}	
+	return  o;
+}
+var person1 = createPerson("fanzhang f","31","sofeware engineer");
+var person2 = createPerson("ada zhang","3","painter");
+
+console.log(person1);
+console.log(person2);
 
 
+function Person(name,age,job){
+	this.name = name;
+	this.age = age;
+	this.job = job;
+	this.sayName = function(){
+		console.log(this.name);
+	}
+}
+
+var person1 = new Person("fanzhang","31","software engineer");
+var person2 = new Person("ada zhang","3","painter");
+
+console.log(person1);
+console.log(person2);
+
+console.log(person1.constructor == Person);
+console.log(person2.constructor == Person);
+
+console.log(person1 instanceof Object);
+console.log(person1 instanceof Person);
 
 
+console.log(person1.sayName());
 
+//Person("li","30","software engineer");
 
+//console.log(window.sayName());
+
+var o = new Object();
+Person.call(o,"Kristen",25,"Nurse");
+console.log(o)
+console.log(o.name)
+o.sayName();
+
+function Person(name,age,job){
+	this.name = name;
+	this.age = age;
+	this.job = job;
+	this.sayName = new Function("alert(this.name)");
+}
+
+//原型模式
+function Person(){
+
+}
+Person.prototype.name = "fanzhang";
+Person.prototype.age = "30";
+Person.prototype.job = "software engineer";
+Person.prototype.sayName = function(){
+	console.log(this.name);
+}
+var persion1 = new Person();
+console.log(person1);
 
 
 
