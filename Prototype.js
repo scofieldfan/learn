@@ -70,6 +70,36 @@ console.log(keys2);
 
 
 
+//原型的动态性
+
+function Company(){
+}
+var friend = new Company();
+Company.prototype.sayName = function(argument){
+	console.log("hi company! make money!!");
+};//未覆盖本来的prototype对象，所以原来的链接关系存在
+friend.sayName();
+
+console.log(Company.prototype.isPrototypeOf(friend));
+console.log(Company.prototype);
+
+
+//call && apply
+var person1 = {name : 'sky',age :30,race:'HUM'};
+var person2 = {name : 'Moon',age :22,race:'NE'};
+
+var sayHello = function(){
+	console.log('Hello '+this.name);
+}
+
+var sayGoodbye = function(){
+	console.log('Bye,'+this.name);
+}
+sayHello.call(person1);
+sayHello.call(person2);
+
+sayHello.apply(person1);
+sayHello.apply(person2);
 
 
 
