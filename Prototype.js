@@ -1,12 +1,11 @@
-
 //原型模式
-function Person(){
+function Person() {
 
 }
 Person.prototype.name = "fanzhang";
 Person.prototype.age = "30";
 Person.prototype.job = "software engineer";
-Person.prototype.sayName = function(){
+Person.prototype.sayName = function() {
 	console.log(this.name);
 }
 var person1 = new Person();
@@ -28,32 +27,32 @@ person1.name = "test";
 person1.sayName();
 person2.sayName();
 //hasOwnProperty 来判断属性是否属于对象内部
-console.log("name is prototype :"+person1.hasOwnProperty("name"));
-console.log("name is prototype :"+person2.hasOwnProperty("name"));
+console.log("name is prototype :" + person1.hasOwnProperty("name"));
+console.log("name is prototype :" + person2.hasOwnProperty("name"));
 //for in 循环中 可以返回prototype 中的属性。也可以返回本身对象里的属性
-for(key in person1){
-	console.log("key in person："+key);
+for (key in person1) {
+	console.log("key in person：" + key);
 }
 delete person1.name;
 person1.sayName();
 person2.sayName();
 
 //对象本身含有，并且不属于自身的。才说明prototyep中含有这个对象
-function hasPrototypeProperty(object,name){
+function hasPrototypeProperty(object, name) {
 	return !object.hasOwnProperty(name) && (name in object);
 }
 var o = {
-	toString: function(){
+	toString: function() {
 		return "My Object";
 	}
 }
-for(var prop in o){
+for (var prop in o) {
 	console.log(prop == "toString");
 	console.log(typeof prop);
 	console.log(o[prop]());
 }
 
-var  keys = Object.keys(Object.getPrototypeOf(person1));
+var keys = Object.keys(Object.getPrototypeOf(person1));
 console.log(keys);
 
 var p1 = new Person();
@@ -72,12 +71,11 @@ console.log(keys2);
 
 //原型的动态性
 
-function Company(){
-}
+function Company() {}
 var friend = new Company();
-Company.prototype.sayName = function(argument){
+Company.prototype.sayName = function(argument) {
 	console.log("hi company! make money!!");
-};//未覆盖本来的prototype对象，所以原来的链接关系存在
+}; //未覆盖本来的prototype对象，所以原来的链接关系存在
 friend.sayName();
 
 console.log(Company.prototype.isPrototypeOf(friend));
@@ -85,40 +83,26 @@ console.log(Company.prototype);
 
 
 //call && apply
-var person1 = {name : 'sky',age :30,race:'HUM'};
-var person2 = {name : 'Moon',age :22,race:'NE'};
+var person1 = {
+	name: 'sky',
+	age: 30,
+	race: 'HUM'
+};
+var person2 = {
+	name: 'Moon',
+	age: 22,
+	race: 'NE'
+};
 
-var sayHello = function(){
-	console.log('Hello '+this.name);
+var sayHello = function() {
+	console.log('Hello ' + this.name);
 }
 
-var sayGoodbye = function(){
-	console.log('Bye,'+this.name);
+var sayGoodbye = function() {
+	console.log('Bye,' + this.name);
 }
 sayHello.call(person1);
 sayHello.call(person2);
 
 sayHello.apply(person1);
 sayHello.apply(person2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

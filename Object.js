@@ -4,17 +4,17 @@ person.name = "fan";
 person.age = "29";
 person.job = "Software Engineer";
 
-person.sayName = function(){
+person.sayName = function() {
 	console.log(this.name);
 }
 
 person.sayName();
 
 var people = {
-	name:"fan",
-	age:"31",
-	job:"Software Engineer",
-	sayName:function(){
+	name: "fan",
+	age: "31",
+	job: "Software Engineer",
+	sayName: function() {
 		console.log(this.name);
 	}
 };
@@ -22,17 +22,17 @@ people.sayName();
 
 var person = {};
 
-Object.defineProperty(person,"name",{
-	writeable:false,
-	value:"Nicholas"	
+Object.defineProperty(person, "name", {
+	writeable: false,
+	value: "Nicholas"
 });
 console.log(person.name);
 //person.name = "fan zhang f";//严格模式下会抛出错误
-console.log(person.name);//can't modify because writeable is false
+console.log(person.name); //can't modify because writeable is false
 
-Object.defineProperty(person, "age",{
-	configurable:false,
-	value:"35"
+Object.defineProperty(person, "age", {
+	configurable: false,
+	value: "35"
 })
 
 console.log(person.age);
@@ -42,17 +42,17 @@ console.log(person);
 
 
 var book = {
-	_year:2004,
-	edition:1
+	_year: 2004,
+	edition: 1
 }
 
 Object.defineProperty(book, "year", {
-	get:function(){
+	get: function() {
 		return this._year;
 	},
-	set:function(newValue){
-		if(newValue > 2004){
-			this._year  = newValue;
+	set: function(newValue) {
+		if (newValue > 2004) {
+			this._year = newValue;
 			this.edition += newValue - 2004;
 		}
 	}
@@ -66,20 +66,20 @@ console.log(book.year);
 
 var car = {};
 Object.defineProperties(car, {
-	_year:{
-		value:2004
+	_year: {
+		value: 2004
 	},
-	edition:{
-		value:1
+	edition: {
+		value: 1
 	},
-	year:{
-		get:function(){
-			return this._year;	
+	year: {
+		get: function() {
+			return this._year;
 		},
-		set:function(newValue){
-			if(newValue>2005){
+		set: function(newValue) {
+			if (newValue > 2005) {
 				this._year = newValue;
-				this.edition  += newValue - 2004;
+				this.edition += newValue - 2004;
 			}
 		}
 	}
@@ -90,38 +90,38 @@ console.log(car.edition);
 console.log(car.year);
 
 var descriptor = Object.getOwnPropertyDescriptor(car, "_year");
-console.log("car.year:"+descriptor.value);
-console.log("car.configurable:"+descriptor.configurable);
-console.log("car.writable:"+descriptor.writable);
- 
+console.log("car.year:" + descriptor.value);
+console.log("car.configurable:" + descriptor.configurable);
+console.log("car.writable:" + descriptor.writable);
 
-function createPerson(name,age,job){
+
+function createPerson(name, age, job) {
 	var o = new Object();
 	o.name = name;
 	o.job = job;
-	o.sayName = function(){
+	o.sayName = function() {
 		console.log(o.name);
-	}	
-	return  o;
+	}
+	return o;
 }
-var person1 = createPerson("fanzhang f","31","sofeware engineer");
-var person2 = createPerson("ada zhang","3","painter");
+var person1 = createPerson("fanzhang f", "31", "sofeware engineer");
+var person2 = createPerson("ada zhang", "3", "painter");
 
 console.log(person1);
 console.log(person2);
 
 
-function Person(name,age,job){
+function Person(name, age, job) {
 	this.name = name;
 	this.age = age;
 	this.job = job;
-	this.sayName = function(){
+	this.sayName = function() {
 		console.log(this.name);
 	}
 }
 
-var person1 = new Person("fanzhang","31","software engineer");
-var person2 = new Person("ada zhang","3","painter");
+var person1 = new Person("fanzhang", "31", "software engineer");
+var person2 = new Person("ada zhang", "3", "painter");
 
 console.log(person1);
 console.log(person2);
@@ -140,12 +140,12 @@ console.log(person1.sayName());
 //console.log(window.sayName());
 
 var o = new Object();
-Person.call(o,"Kristen",25,"Nurse");
+Person.call(o, "Kristen", 25, "Nurse");
 console.log(o)
 console.log(o.name)
 o.sayName();
 
-function Person(name,age,job){
+function Person(name, age, job) {
 	this.name = name;
 	this.age = age;
 	this.job = job;
@@ -153,25 +153,14 @@ function Person(name,age,job){
 }
 
 //原型模式
-function Person(){
+function Person() {
 
 }
 Person.prototype.name = "fanzhang";
 Person.prototype.age = "30";
 Person.prototype.job = "software engineer";
-Person.prototype.sayName = function(){
+Person.prototype.sayName = function() {
 	console.log(this.name);
 }
 var persion1 = new Person();
 console.log(person1);
-
-
-
-
-
-
-
-
-
-
-
