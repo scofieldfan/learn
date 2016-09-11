@@ -67,6 +67,7 @@ console.log(p1Keys);
 var keys2 = Object.getOwnPropertyNames(p1);
 console.log(keys2);
 
+<<<<<<< Updated upstream
 
 
 //原型的动态性
@@ -106,3 +107,31 @@ sayHello.call(person2);
 
 sayHello.apply(person1);
 sayHello.apply(person2);
+function Book(){}
+
+var book1 = new Book();
+//book1.sayName();
+console.log(book1.prototype);
+console.log(book1  instanceof Book);//true
+console.log(book1  instanceof Object);//true
+console.log(book1.constructor == Book);//true
+console.log(book1.constructor == Object);//false
+
+
+Book.prototype = {
+	constructor:Book,	
+	name:"free to choose",
+	age:32,
+	job:"software Engineer",
+	sayName: function(){
+		console.log(this.name)
+	}
+}
+var book2 = new Book();
+console.log(book2  instanceof Book);// true
+console.log(book2  instanceof Object);//true
+console.log(book2.constructor == Book);//true 
+console.log(book2.constructor == Object);// false
+
+
+
