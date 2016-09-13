@@ -1,0 +1,25 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "fanzhang's node demo",
+  "main": "hello.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scofieldfan/learn/node"
+  },
+  "keywords": [
+    "node",
+    "test",
+    "demo",
+    "express"
+  ],
+  "author": "fanzhang",
+  "license": "ISC"
+}
