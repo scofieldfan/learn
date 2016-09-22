@@ -1,0 +1,15 @@
+{
+  "name": "hellosocketio",
+  "version": "1.0.0",
+  "description": "hello socket io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "socket.io": "^1.4.8",
+    "socket.io-client": "^1.4.8"
+  }
+}
