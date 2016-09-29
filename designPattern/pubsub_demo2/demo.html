@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="pubsubs.js"></script>
+	</head>
+<body>
+	<form id="flickrSearch">
+
+		<input type="text" name="tag" id="query"/>
+
+		<input type="submit" name="submit" value="submit"/>
+
+	</form>
+
+	<div id="lastQuery"></div>
+
+	<ol id="searchResults"></ol>
+
+	<script id="resultTemplate" type="text/html">
+    <% _.each(items,="" function(="" item="" ){="" %="">
+        <li><img src="<%= item.media.m="" %="">"/></li>
+    <% });%="">
+	</script>
+	<script src="demo.js"></script>
+</body>
+</html>
