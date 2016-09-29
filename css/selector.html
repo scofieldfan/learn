@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			[title]
+				{
+				color:red;
+				}	
+			/*
+			div p {
+				color:blue;
+			}
+			*/
+			div>p{ /* 第一层节点*/
+				color:yellow;
+			}
+			.test+p{/*之后节点的兄弟节点*/
+				color:#ccc;
+			}
+			a:active
+			{ 
+				background-color:yellow;
+			}
+			.test:hover{
+				background-color: blue;
+			}
+			.test:active{
+				background-color: #ccc;
+			}
+
+			p:first-of-type/* 某个子元素中的第一个类型为p的元素 */
+			{
+				font-size:60px;
+			}
+			p:last-of-type/* 某个子元素中的最后一个类型为p的元素 */
+			{
+				font-size:100px;
+			}
+        </style>
+    </head>
+    <body>
+    	<div title="attribute">i am test</div>
+    	<div >i am test2</div>
+    	<p>i am a asdfasdfasdf.....</p>
+    	<div> <p>I am a test afafwef asdfasf asdfasdf.........</p></div>
+    	<div class="test"> <article><p>I am a test afafwef asdfasf asdfasdf.........</p></article></div>
+    	<p>i am a paragrahpe.....</p>
+    	<p><span>i am a paragrahpe</span>.....</p>
+    </body>
+</html>

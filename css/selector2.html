@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			p:only-of-type{/*某个节点内部只有一个P类型的节点的时候*/
+				color:red;
+			}
+			p:only-child{/*p 是唯一个子节点的时候*/
+				color:yellow;
+			}
+			/*属于是第二个的li元素*/
+			/*
+			li:nth-child(2){				
+				background-color: blue;
+			}
+			li:nth-last-child(1){
+				background-color: red;
+			}
+			*/
+			/*
+			p:nth-of-type(2){
+				background-color: red;
+			}*/
+			/*唯一的孩子节点*/
+			/*
+			p:only-child{
+				font-weight: bold;
+				color:red;
+			}
+
+			p:nth-last-child(3){
+				background-color: yellow;
+			}*/
+			/*第三个类型为P的节点*/
+			p:nth-of-type(3){
+				font-size:100px;
+			}
+			/*第三个类型的div的元素*/
+			div:nth-of-type(3){
+				font-size:100px;
+			}
+        </style>
+    </head>
+    <body>
+    	<p>i am a p</p>
+    	<div>afa</div>
+    	<div><p>afasdfa</p></div>
+    	<div><p>test1</p><span>test2</span><p>p222</p></div>
+    	<ul>
+    		<li>test l1</li>
+    		<li>test l2</li>
+    		<li>test l3</li>
+    		<li>test l4</li>
+    		<li>test l5</li>
+    	</ul>
+    	<div>
+    		<p>p1</p>
+    		<div>div1</div>
+    		<p>p2</p>
+    		<p>p3</p>
+    		<p>p4</p>
+    		<p>p5</p>
+    		<p>p6</p>
+    		<p>p7</p>
+    	</div>
+    </body>
+</html>
