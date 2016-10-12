@@ -2,16 +2,73 @@
 * @Author: Fan
 * @Date:   2016-10-10 11:32:21
 * @Last Modified by:   Fan
-* @Last Modified time: 2016-10-10 13:05:35
+* @Last Modified time: 2016-10-11 12:26:06
 */
 
 var React = require('react');
 var ReactDom = require('react-dom');
-var HelloWorld = React.createClass({
+
+var USER_DATA = {
+	name : 'fanzhang',
+	username : 'scofieldfan',
+	image : 'https://avatars0.githubusercontent.com/u/2978786?v=3&s=466'
+}
+
+var ProfilePic = React.createClass({
 	render:function(){
-		return (
-			<div>Hello world！！！</div>
+		return <img src={this.props.imageUrl} style={{height:100,width:100}}/>
+	}
+});
+var Link = React.createClass({
+	changeURL:function(){
+		window.location.replace(this.props.href);
+	},
+	render:function(){
+		return(
+			<span style={{color:'blue',cursor:'pointer'}}
+				onClick={this.changeURL}>
+			{this.props.children}
+			</span>
 			)
 	}
 });
-ReactDom.render(<HelloWorld/>,document.getElementById('app'));
+var ProfileLink = React.createClass({
+	render:function(){
+		return (
+			<div>
+				<Link href={'https://www.github.com/'+this.props.username} >
+				{this.props.username}
+				</Link>
+			</div>
+			)
+	}
+})
+
+var ProfileName = React.createClass({
+	render:function(){
+		return(
+			<div>{this.props.name}</div>
+			)
+	}
+});
+
+var Avatar = React.createClass({
+	render:function(){
+		return (
+			<div>
+				<ProfilePic imageUrl={this.props.user.image}/>
+				<ProfileName name={this.props.user.name}/>
+				<ProfileLink username={this.props.user.username}/>
+			</div>
+			)
+	}
+})
+
+var HelloWorld = React.createClass({
+	render:function(){
+		return (
+			<div>Hello {this.props.name+this.props.anySortOfData}world！！！</div>
+			)
+	}
+});
+ReactDom.render(<Avatar user={USER_DATA} />,document.getElementById('app'));
