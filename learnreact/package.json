@@ -4,8 +4,8 @@
   "description": "fan's learn react demo",
   "main": "index.js",
   "scripts": {
-    "start":"webpack-dev-server",
-    "production":"webpack -p"
+    "start": "webpack-dev-server",
+    "production": "webpack -p"
   },
   "keywords": [
     "react",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.1.1",
+    "raven-js": "^3.7.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
