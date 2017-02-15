@@ -1,18 +1,33 @@
 /*
-* @Author: Fan
-* @Date:   2016-09-21 20:59:25
-* @Last Modified by:   Fan
-* @Last Modified time: 2016-09-21 21:01:11
-*/
+ * @Author: Fan
+ * @Date:   2016-09-21 20:59:25
+ * @Last Modified by:   fanzhang
+ * @Last Modified time: 2016-11-20 21:46:55
+ */
 
 'use strict';
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
-var Server = require('socket.io');
-var io = new Server(5555);
+app.use(express.static('./'));
 
-io.on('connection',function(socket){
-	socket.emit('msg',{hi:"fanzhang"})
-	socket.on('msg',function(data){
-		console.log(data);
-	});
+app.get('/', function(req, res) {
+    res.sendfile('index.html');
+});
+
+io.on('connection', function(socket) {
+    console.log('a user connected');
+    socket.on('disconnect', function() {
+        console.log('user disconnected');
+    });
+    socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+     io.emit('chat message', msg);
+  });
+});
+
+http.listen(8080, function() {
+    console.log('listening on *:8080');
 });

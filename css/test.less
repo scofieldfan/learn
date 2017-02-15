@@ -1,0 +1,115 @@
+/*
+* @Author: fanzhang
+* @Date:   2016-12-23 23:26:08
+* @Last Modified by:   fanzhang
+* @Last Modified time: 2016-12-23 23:26:08
+*/
+* {
+    box-sizing: border-box;
+}
+.blue{
+        width: 200px;
+        height: 200px;
+        background: blue;
+        margin-top: 20px;
+}
+.red{
+     background: red;
+     word-break: break-all;
+}
+//inline-block元素垂直居中
+.method-1 {
+    .blue {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .red {
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+//定高block元素垂直居中
+.method-2 {
+    .blue {
+        padding:50px;
+    }
+    .red {
+        height:100px;
+        display: block;
+        vertical-align: middle;
+    }
+}
+
+//定高block元素垂直居中
+.method-3 {
+    .blue {
+        position: relative;
+    }
+    .red {
+        position: absolute;
+        width: 100px;
+        height:100px;
+        top:50%;
+        left:50%;
+        margin: -50px 0 0 -50px;
+
+    }
+}
+//不定高block元素垂直居中
+.method-4 {
+    .blue {
+        position: relative;
+    }
+    .red {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translateX(-50%) translateY(-50%);
+
+    }
+}
+
+
+//不定高block元素垂直居中
+.method-5 {
+    .blue {
+        position: relative;
+    }
+    .red {
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        width: 60px;
+        height:60px;
+        margin:auto;
+    }
+}
+
+//不定高block元素垂直居中
+.method-6 {
+    .blue {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+    }
+    .red {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

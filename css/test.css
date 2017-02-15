@@ -1,0 +1,73 @@
+/*
+* @Author: fanzhang
+* @Date:   2016-12-23 23:26:08
+* @Last Modified by:   fanzhang
+* @Last Modified time: 2016-12-23 23:26:08
+*/
+* {
+  box-sizing: border-box;
+}
+.blue {
+  width: 200px;
+  height: 200px;
+  background: blue;
+  margin-top: 20px;
+}
+.red {
+  background: red;
+  word-break: break-all;
+}
+.method-1 .blue {
+  display: table-cell;
+  vertical-align: middle;
+}
+.method-1 .red {
+  vertical-align: middle;
+  display: inline-block;
+}
+.method-2 .blue {
+  padding: 50px;
+}
+.method-2 .red {
+  height: 100px;
+  display: block;
+  vertical-align: middle;
+}
+.method-3 .blue {
+  position: relative;
+}
+.method-3 .red {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+}
+.method-4 .blue {
+  position: relative;
+}
+.method-4 .red {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.method-5 .blue {
+  position: relative;
+}
+.method-5 .red {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+.method-6 .blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
