@@ -2,8 +2,12 @@
 
 ### CSS
 * Flex && Grid
+* BFC
+* 垂直居中
+* 两栏布局
 
 ### Javascript
+* prototype 继承关系
 * DOM所有API
 * Promise
 * Event Loop
@@ -15,8 +19,15 @@
 * function programming
 
 ### 浏览器的原理
+*** 缓存
+*** HTTPS
+*** HTTP2
 *** Chrome工具使用
 *** Web性能
+
+### 安全
+*** XSS
+*** CSRF
 
 ### NodeJS
 *** 崩溃分析
@@ -26,10 +37,17 @@
 
 ### 框架
 * React Diff原理
-* Vue
+* Vue Diff算法
+* Vue 响应式原理
 
 ### 标准
 * HTML5
+
+### 浏览器
+* 渲染原理
+* 性能优化
+* 跨域
+
 
 ### 操作系统
 * 进程间通信
@@ -49,16 +67,24 @@
 ### 编译
 * 编译原理AST等
 * Webpack
-* Fis
-* rollup
+ treeshaking
+ codesplit
+ dll
+ happypack
+
 
 ### 手写小程序
 * LeetCode Easy
 * bind，call，apply
 * throttle，debounce
 * EventEmitter，Pub，Sub
-* Curry，Flatter Array
+* memolize
+* log
+* Schedule
+* Curry
+* Flatter Array
 * retryAjax
+* 手写 Proxy / Object.defineProperty
 
 
 ### 垂直方向
